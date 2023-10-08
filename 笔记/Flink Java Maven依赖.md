@@ -1,0 +1,98 @@
+```xml
+<properties>  
+    <maven.compiler.source>8</maven.compiler.source>  
+    <maven.compiler.target>8</maven.compiler.target>  
+    <encoding>UTF-8</encoding>  
+    <flink.version>1.14.6</flink.version>  
+    <scala.binary.version>2.12</scala.binary.version>  
+    <hadoop.version>3.0.0</hadoop.version>  
+</properties>  
+  
+<dependencies>  
+    <!--flink流处理-->  
+    <dependency>  
+        <groupId>org.apache.flink</groupId>  
+        <artifactId>flink-streaming-java_${scala.binary.version}</artifactId>  
+        <version>${flink.version}</version>  
+        <scope>provided</scope>  
+    </dependency>  
+    <!--        flink客户端-->  
+    <dependency>  
+        <groupId>org.apache.flink</groupId>  
+        <artifactId>flink-clients_${scala.binary.version}</artifactId>  
+        <version>${flink.version}</version>  
+        <scope>provided</scope>  
+    </dependency>  
+  
+    <!--本地webui-->  
+    <dependency>  
+        <groupId>org.apache.flink</groupId>  
+        <artifactId>flink-runtime-web_${scala.binary.version}</artifactId>  
+        <version>${flink.version}</version>  
+        <scope>provided</scope>  
+    </dependency>  
+    <dependency>  
+        <groupId>org.apache.flink</groupId>  
+        <artifactId>flink-table-api-java-bridge_${scala.binary.version}</artifactId>  
+        <version>${flink.version}</version>  
+    </dependency>  
+    <!--kafka-->  
+    <dependency>  
+        <groupId>org.apache.flink</groupId>  
+        <artifactId>flink-connector-kafka_${scala.binary.version}</artifactId>  
+        <version>${flink.version}</version>  
+        <scope>provided</scope>  
+    </dependency>  
+  
+    <!--json解析-->  
+    <dependency>  
+        <groupId>cn.hutool</groupId>  
+        <artifactId>hutool-all</artifactId>  
+        <version>4.5.15</version>  
+    </dependency>  
+    <!--Bean-->  
+    <dependency>  
+        <groupId>org.projectlombok</groupId>  
+        <artifactId>lombok</artifactId>  
+        <version>1.18.24</version>  
+    </dependency>  
+  
+    <dependency>  
+        <groupId>com.starrocks</groupId>  
+        <artifactId>flink-connector-starrocks</artifactId>  
+        <version>1.2.8_flink-1.14_2.12</version>  
+    </dependency>  
+  
+  
+    <dependency>  
+        <groupId>org.slf4j</groupId>  
+        <artifactId>slf4j-log4j12</artifactId>  
+        <version>1.7.30</version>  
+        <scope>provided</scope>  
+    </dependency>  
+</dependencies>  
+  
+<build>  
+    <plugins>  
+        <plugin>  
+            <groupId>org.apache.maven.plugins</groupId>  
+            <artifactId>maven-assembly-plugin</artifactId>  
+            <version>3.1.0</version>  
+            <configuration>  
+                <descriptorRefs>  
+                    <descriptorRef>jar-with-dependencies</descriptorRef>  
+                </descriptorRefs>  
+            </configuration>  
+            <executions>  
+                <execution>  
+                    <id>make-assembly</id>  
+                    <phase>package</phase>  
+                    <goals>  
+                        <goal>single</goal>  
+                    </goals>  
+                </execution>  
+            </executions>  
+        </plugin>  
+    </plugins>  
+</build>
+```
