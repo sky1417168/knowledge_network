@@ -3,7 +3,7 @@
 #### 安装环境
 - [[Linux]] 
 - [[Java]] 8
-- [[Hadoop 知识点总结 |Hadoop]] 3.1.3
+- [[Hadoop|Hadoop]] 3.1.3
 - [[Mysql]]
 - Hive 3.1.2
 
