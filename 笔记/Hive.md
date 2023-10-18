@@ -67,6 +67,18 @@ alter database mydb set dbproperties ('edited-by'='sky')
 
 ```
 
+## 锁机制
+查看锁
+```sql
+show locks tableName
+```
+
+#### 共享锁
+Shared (S)
+
+#### 互斥锁
+Exclusive (X）
+
 ## 数据操作
 
 ## 数据查询
